@@ -143,10 +143,10 @@ class CheckCpuUsage < Sensu::Plugin::Check::CLI
       check_name = "cpu-usage-#{metric}"
 
       if config["warn_#{metric}".to_sym] and config["crit_#{metric}".to_sym]
-        if config["crit_#{metric}".to_sym] and value >= config["crit_#{metric}".to_sym]
-          send_critical(check_name, "CPU #{metric} time is too high - Current: #{value}% (>= #{config["crit_#{metric}".to_sym]}%)" if value >= config["crit_#{metric}".to_sym])
-        elsif config["warn_#{metric}".to_sym] and value >= config["warn_#{metric}".to_sym]
-          send_warning(check_name, "High CPU #{metric} time - Current: #{value}% (>= #{config["warn_#{metric}".to_sym]}%)" if value >= config["warn_#{metric}".to_sym])
+        if value >= config["crit_#{metric}".to_sym]
+          send_critical(check_name, "CPU #{metric} time is too high - Current: #{value}% (>= #{config["crit_#{metric}".to_sym]}%)") if value >= config["crit_#{metric}".to_sym])
+        elsif value >= config["warn_#{metric}".to_sym]
+          send_warning(check_name, "High CPU #{metric} time - Current: #{value}% (>= #{config["warn_#{metric}".to_sym]}%)") if value >= config["warn_#{metric}".to_sym])
         else
           send_ok(check_name, "CPU #{metric} time is normal - Current: #{value}% (<= #{config["warn_#{metric}".to_sym]}%)")
         end
