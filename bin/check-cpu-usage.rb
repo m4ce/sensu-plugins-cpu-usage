@@ -155,7 +155,7 @@ class CheckCpuUsage < Sensu::Plugin::Check::CLI
       end
     end
 
-    config[:ignore_metrics].each do |metric|
+    config[:ignore_metric].each do |metric|
       send_ok(check_name, "CPU #{metric} time not monitored")
     end
 
