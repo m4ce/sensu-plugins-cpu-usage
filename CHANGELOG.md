@@ -3,13 +3,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
-## Unreleased
-
-## [0.0.5] - 2016-01-14
+## [0.0.6] - 2016-01-14
 ### Added
 - Added --dryrun command line option
 
-## [0.0.4] - 2016-01-14
+## [0.0.5] - 2016-01-14
 ### Added
 - Added --handlers command line option
 
@@ -28,3 +26,6 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ## [0.0.1] - 2016-01-05
 ### Added
 - Initial release
+
+## Unreleased
+
