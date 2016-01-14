@@ -22,6 +22,7 @@ Usage: check-cpu-usage.rb (options)
         --crit-steal <USAGE>         Critical if USAGE exceeds the current system steal usage
         --crit-system <USAGE>        Critical if USAGE exceeds the current system system usage
         --crit-user <USAGE>          Critical if USAGE exceeds the current system user usage
+        --dryrun                     Do not send events to sensu client socket
         --handlers <HANDLERS>        Comma separated list of handlers
     -i <user,nice,system,idle,iowait,irq,softirq,steal,guest,guest_nice>,
         --ignore-metric              Comma separated list of metrics to ignore
