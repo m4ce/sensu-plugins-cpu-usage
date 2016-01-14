@@ -67,6 +67,12 @@ class CheckCpuUsage < Sensu::Plugin::Check::CLI
          :default => 90,
          :proc => proc(&:to_i)
 
+  option :dryrun,
+         :description => "Do not send events to sensu client socket",
+         :long => "--dryrun",
+         :boolean => true,
+         :default => false
+
   def initialize()
     super
 
@@ -83,8 +89,12 @@ class CheckCpuUsage < Sensu::Plugin::Check::CLI
   end
 
   def send_client_socket(data)
-    sock = UDPSocket.new
-    sock.send(data + "\n", 0, "127.0.0.1", 3030)
+    if config[:dryrun]
+      puts data.inspect
+    else
+      sock = UDPSocket.new
+      sock.send(data + "\n", 0, "127.0.0.1", 3030)
+    end
   end
 
   def send_ok(check_name, msg)
