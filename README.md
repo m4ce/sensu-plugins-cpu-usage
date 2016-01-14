@@ -22,6 +22,7 @@ Usage: check-cpu-usage.rb (options)
         --crit-steal <USAGE>         Critical if USAGE exceeds the current system steal usage
         --crit-system <USAGE>        Critical if USAGE exceeds the current system system usage
         --crit-user <USAGE>          Critical if USAGE exceeds the current system user usage
+        --handlers <HANDLERS>        Comma separated list of handlers
     -i <user,nice,system,idle,iowait,irq,softirq,steal,guest,guest_nice>,
         --ignore-metric              Comma separated list of metrics to ignore
     -m <user,nice,system,idle,iowait,irq,softirq,steal,guest,guest_nice>,
@@ -41,6 +42,8 @@ Usage: check-cpu-usage.rb (options)
 ```
 
 By default, all metrics are taken into consideration when calculating the overall cpu usage.
+
+Use the --handlers command line option to specify which handlers you want to use for the generated events.
 
 ## Author
 Matteo Cerutti - <matteo.cerutti@hotmail.co.uk>
